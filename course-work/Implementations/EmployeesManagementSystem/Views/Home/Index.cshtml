@@ -1,0 +1,32 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+
+<div class="text-center">
+    <h1 class="display-4">Welcome to the Employee Management System</h1>
+    <p>Manage your employees and departments efficiently.</p>
+
+    <div class="mt-4">
+        <a class="btn btn-primary btn-lg" asp-controller="Employees" asp-action="Index">
+            View Employees
+        </a>
+        <a class="btn btn-success btn-lg" asp-controller="Departments" asp-action="Index">
+            View Departments
+        </a>
+    </div>
+
+    @if (User.Identity.IsAuthenticated)
+    {
+        if (User.IsInRole("Admin"))
+        {
+            <div class="mt-4">
+                <a class="btn btn-secondary btn-lg" asp-controller="Employees" asp-action="Create">
+                    Add New Employee
+                </a>
+                <a class="btn btn-secondary btn-lg" asp-controller="Departments" asp-action="Create">
+                    Add New Department
+                </a>
+            </div>
+        }
+    }
+</div>

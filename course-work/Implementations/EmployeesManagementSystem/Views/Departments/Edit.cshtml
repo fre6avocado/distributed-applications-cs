@@ -1,0 +1,18 @@
+﻿@model Department
+
+<h2>Edit Department</h2>
+
+<form asp-action="Edit" method="post">
+    <input type="hidden" asp-for="Id" />
+    <div>
+        <label for="Name">Name</label>
+        <input id="Name" name="Name" value="@Model.Name" maxlength="100" required />
+    </div>
+    <div>
+        <label for="Location">Location</label>
+        <input id="Location" name="Location" value="@Model.Location" maxlength="100" required />
+    </div>
+    <button type="submit">Save</button>
+</form>
+
+<a asp-action="Index">Back to List</a>

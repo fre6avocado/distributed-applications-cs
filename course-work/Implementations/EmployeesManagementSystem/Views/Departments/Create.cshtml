@@ -1,0 +1,17 @@
+﻿@model Department
+
+<h2>Create Department</h2>
+
+<form asp-action="Create" method="post">
+    <div>
+        <label for="Name">Name</label>
+        <input id="Name" name="Name" value="@Model.Name" maxlength="100" required />
+    </div>
+    <div>
+        <label for="Location">Location</label>
+        <input id="Location" name="Location" value="@Model.Location" maxlength="100" required />
+    </div>
+    <button type="submit">Create</button>
+</form>
+
+<a asp-action="Index">Back to List</a>
